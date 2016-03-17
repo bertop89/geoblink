@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Cities:</h1>
+      	<ul class="list-group">
+  			<li class="list-group-item" ng-repeat="city in $ctrl.cities">
+    			<span class="badge">{{city.businesses.length}}</span>
+			    <div class="mt-20" uib-tooltip="{{city.businesses}}">{{city.city}}</div>
+			    <ul class="rowlist-group">
+				    <li class="list-group-item" ng-repeat="bus in city.businesses">
+				    	<a ng-click="$ctrl.updateBus(city,bus)" href="#">{{bus.name}}</a>
+				    </li>
+			    </ul>
+			</li>
+		</ul>
+    </div>
+  </div>
+</div>
